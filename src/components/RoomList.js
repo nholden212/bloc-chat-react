@@ -23,8 +23,9 @@ class RoomList extends Component {
   }
 
   createRoom(e) {
+    console.log(e.target.value);
     this.roomsRef.push({
-      name: e.target.value
+      name: this.state.inputText
     });
   }
 

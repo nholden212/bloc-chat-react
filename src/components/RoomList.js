@@ -23,10 +23,14 @@ class RoomList extends Component {
     this.setState({ inputText: e.target.value });
   }
 
-  createRoom() {
+  createRoom(e) {
+    e.preventDefault();
+    if (!this.state.inputText) { return }
+    const newRoom = this.state.inputText;
     this.roomsRef.push({
       name: this.state.inputText
     });
+    this.setState({ inputText: "" });
   }
 
   render(){

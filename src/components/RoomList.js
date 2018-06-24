@@ -26,7 +26,6 @@ class RoomList extends Component {
   createRoom(e) {
     e.preventDefault();
     if (!this.state.inputText) { return }
-    const newRoom = this.state.inputText;
     this.roomsRef.push({
       name: this.state.inputText
     });
@@ -42,7 +41,7 @@ class RoomList extends Component {
                 <div key={index} onClick={() => this.props.activateRoom(room.key, room.name)}>{room.name}</div>
               )}
         </div>
-        <form className="create-room-form" onSubmit={() => this.createRoom()}>
+        <form className="create-room-form" onSubmit={(e) => this.createRoom(e)}>
           <h3>Create a new chat room:</h3>
           <label htmlFor="room-name-input">Chat Room Name:</label>
           <input type="text" id="room-name-input" value={this.state.inputText} onChange={(e) => this.textUpdate(e)}></input>

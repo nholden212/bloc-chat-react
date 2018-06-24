@@ -25,7 +25,6 @@ class RoomList extends Component {
   createRoom(e) {
     e.preventDefault();
     if (!this.state.inputText) { return }
-    const newRoom = this.state.inputText;
     this.roomsRef.push({
       name: this.state.inputText
     });
